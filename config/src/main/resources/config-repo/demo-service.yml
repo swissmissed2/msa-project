@@ -1,0 +1,15 @@
+server:
+  port: 19093
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:19090/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh # /actuator/refresh로 자동 갱신 설정
+
+message: "test completed"

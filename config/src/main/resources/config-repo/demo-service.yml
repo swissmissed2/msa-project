@@ -10,6 +10,6 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh # /actuator/refresh로 자동 갱신 설정
+        include: refresh, health
 
 message: "test completed"

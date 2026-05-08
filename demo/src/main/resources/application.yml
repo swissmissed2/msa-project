@@ -1,6 +1,8 @@
 spring:
   application:
     name: demo-service
+  profiles:
+    active: dev
   config:
     import: "configserver:http://localhost:19092"
   cloud:

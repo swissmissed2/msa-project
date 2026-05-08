@@ -1,0 +1,23 @@
+server:
+  port: 19091
+
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: demo-service
+              uri: lb://demo-service
+              predicates:
+                - Path=/demo/**
+          discovery:
+            locator:
+              enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:19090/eureka/
